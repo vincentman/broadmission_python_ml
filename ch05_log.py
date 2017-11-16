@@ -28,7 +28,6 @@ X_train, X_test, y_train, y_test = train_test_split(df_data, df_target,
 logreg.fit(X_train, y_train)
 y_pred = logreg.predict(X_test)
 
-y_pred = logreg.predict(X_test)
 rmse = np.sqrt(mean_squared_error(y_test, y_pred))
 
 print('R^2', logreg.score(X_test, y_test))
