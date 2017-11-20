@@ -27,7 +27,9 @@ for pairidx, pair in enumerate([[0, 1], [0, 2], [0, 3],
     y = iris.target
 
     # Train
+    #criterion: default "gini"
     clf = DecisionTreeClassifier().fit(X, y)
+#    clf = DecisionTreeClassifier(criterion="entropy").fit(X, y)
 
     # Plot the decision boundary
     plt.subplot(2, 3, pairidx + 1)
