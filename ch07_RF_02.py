@@ -46,6 +46,9 @@ models = [DecisionTreeClassifier(max_depth=None),
           AdaBoostClassifier(DecisionTreeClassifier(max_depth=3),
                              n_estimators=n_estimators)]
 
+#[0,1]: sepal length, sepal width
+#[0,2]: sepal length, petal width        
+#[2,3]: petal length, petal width        
 for pair in ([0, 1], [0, 2], [2, 3]):
     for model in models:
 

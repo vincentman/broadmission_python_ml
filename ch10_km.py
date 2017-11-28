@@ -6,10 +6,8 @@ Created on Mon Jul  3 20:56:13 2017
 @author: jerry
 """
 #k-means
-from sklearn.datasets import load_iris
 from sklearn import datasets
 import pandas as pd
-import numpy as np
 from sklearn.cluster import KMeans
 
 iris = datasets.load_iris()
@@ -23,9 +21,8 @@ km = KMeans(n_clusters=3)
 km.fit(df_data)
 
 labels = km.predict(df_data)
-print(labels)
-
-km.predict([[0.1,0.2,0.3,0.4],[5.9,3.0,5.1,1.8]])
+print('df_data predict:\n', labels)
+print('specified data predict:\n', km.predict([[0.1,0.2,0.3,0.4],[5.9,3.0,5.1,1.8]]))
 
 ###Visual
 import matplotlib.pyplot as plt
@@ -42,9 +39,10 @@ ks = range(1, 6)
 inertias = []
 
 for k in ks:
-
+#    km = KMeans(n_clusters=k, max_iter=5)
     km = KMeans(n_clusters=k)
     km.fit(df_data)
+    print('k: ', k, ', km.n_iter_: ', km.n_iter_)
     inertias.append(km.inertia_)
     
 plt.plot(ks, inertias, '-o')

@@ -20,6 +20,8 @@ df_data = pd.DataFrame(iris['data'], columns=iris.feature_names)
 df_target = pd.DataFrame(iris['target'], columns=['Target'])
 df = pd.concat([df_data,df_target],axis=1)
 
+#X_train, X_test, y_train, y_test = train_test_split(df_data, df_target,
+#                                                    random_state=42)
 X_train, X_test, y_train, y_test = train_test_split(df_data, df_target,
                                                     test_size = 0.3,
                                                     random_state=42)
