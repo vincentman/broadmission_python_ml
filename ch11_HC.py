@@ -19,14 +19,16 @@ hclust = cluster.AgglomerativeClustering(linkage = 'ward',
 
 hclust.fit(df_data)
 cluster_labels = hclust.labels_
-print(cluster_labels)
+print('labels:\n', cluster_labels)
 
 silhouette_avg = metrics.silhouette_score(df_data, cluster_labels)
-print(silhouette_avg)
+print('silhouette_score: ', silhouette_avg)
+
 ######
 from scipy.cluster.hierarchy import linkage, dendrogram
 import matplotlib.pyplot as plt
 
+#mergings = linkage(df_data, method='ward', metric='euclidean')
 mergings = linkage(df_data, method='complete')
 
 

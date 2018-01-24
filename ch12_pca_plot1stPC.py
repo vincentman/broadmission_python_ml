@@ -1,10 +1,10 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Jul  3 22:30:46 2017
+Created on Thu Dec 14 12:02:50 2017
 
-@author: jerry
+@author: vincentkao
 """
+
 #PCA
 import matplotlib.pyplot as plt
 from sklearn import datasets
@@ -14,7 +14,6 @@ import numpy as np
 iris = datasets.load_iris()
 X = iris.data[:, :2]  
 Y = iris.target
-
 
 X_reduced = PCA(n_components=3).fit_transform(iris.data)
 plt.scatter(X_reduced[Y==0, 0], np.zeros((50,1))+0.02, color='red', marker='^')
@@ -29,8 +28,3 @@ plt.set_zlabel("3rd eigenvector")
 plt.w_zaxis.set_ticklabels([])
 
 plt.show()
-
-
-
-
-
